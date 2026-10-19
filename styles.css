@@ -1,7 +1,5 @@
 :root{--bg:#f8f6f0;--cd:#fff;--tx:#2a2622;--mu:#6f695d;--bd:#e7e2d6;--in:#ebe9e4;--ac:#a8683f;--on:#fff;--dk:#1c1a18;--dkt:#fff;--bad:#b3261e;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
-:root[data-pal=sage]{--bg:#f2f5ee;--bd:#dce4d3;--in:#e6ebdf;--ac:#5b7c56}
-:root[data-pal=blue]{--bg:#f1f5fa;--bd:#d8e2ef;--in:#e4ebf3;--ac:#3a6ea8}
 :root[data-theme=dark]{--bg:#1a1816;--cd:#25221f;--tx:#f1ece3;--mu:#a9a193;--bd:#3a352f;--in:#322e29;--ac:#d99a6c;--on:#1b1917;--dk:#f1ece3;--dkt:#1b1917;--bad:#ff8a80;color-scheme:dark}
 *{box-sizing:border-box}[hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100%}
@@ -138,7 +136,6 @@ img.logo{display:block;background:none;border-radius:0;object-fit:contain;flex:n
 /* v1.0.6 - logo-matched theme, icons and type */
 :root{--bg:#eef3fa;--cd:#fafcff;--tx:#1f3350;--mu:#5b6f8c;--bd:#d2deee;--in:#e2eaf5;--ac:#3F5D83;--on:#fff;--dk:#2b4263;--dkt:#fff;--bad:#b3261e;
 --ff:ui-rounded,"SF Pro Rounded","Hiragino Maru Gothic ProN",Quicksand,Nunito,"Varela Round","Google Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-:root[data-pal=cream]:not([data-theme=dark]){--bg:#f8f6f0;--cd:#fff;--tx:#2a2622;--mu:#6f695d;--bd:#e7e2d6;--in:#ebe9e4;--ac:#a8683f;--dk:#1c1a18}
 :root[data-theme=dark]{--bg:#111822;--cd:#1a2432;--tx:#e8eef7;--mu:#9db0c9;--bd:#2b3a4f;--in:#233147;--ac:#8fb0dc;--on:#0f1722;--dk:#e8eef7;--dkt:#0f1722;--bad:#ff8a80}
 body{font-family:var(--ff)}
 h1{color:var(--ac);font-weight:700;letter-spacing:-.01em}

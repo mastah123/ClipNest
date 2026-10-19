@@ -1,15 +1,11 @@
 function settings(){
 const y=(dlg.querySelector('.sb')||{}).scrollTop||0,nt=D.filter(x=>x.trashed).length;
 const seg=(opts,cur,cb)=>h('div',{class:'seg',role:'group'},...opts.map(([v,l])=>h('button',{class:'btn'+(cur===v?' on':''),'aria-pressed':String(cur===v),onclick:()=>{cb(v);settings()}},l)));
-const ac=h('input',{type:'color','aria-label':'Custom accent color',oninput:e=>{pref('accent',e.target.value);theme()}});ac.value=pref('accent')||'#3F5D83';
 const cats=[...new Set(D.map(s=>s.category).filter(Boolean))].sort();
 const st=h('p',{class:'note'},'Storage: calculating…');navigator.storage&&navigator.storage.estimate?navigator.storage.estimate().then(e=>st.textContent=`Approximate storage used: ${(e.usage/1024).toFixed(1)} KB of ${(e.quota/1048576).toFixed(0)} MB available. ${D.length} snippet(s) stored.`).catch(()=>st.textContent='Storage estimate unavailable.'):st.textContent='Storage estimate unavailable in this browser.';
 const pj=h('textarea',{rows:3,placeholder:'…or paste backup JSON here','aria-label':'Paste backup JSON'}),fi=h('input',{type:'file',accept:'.json,application/json','aria-label':'Choose backup file',onchange:async e=>{const f=e.target.files[0];if(f)imp(await f.text())}});
 show([h('div',{class:'sh'},h('h3',{style:'margin:0'},'Settings'),h('button',{class:'btn pri',onclick:hide},'Done')),h('div',{class:'sb'},
-h('h4',{},'Appearance'),seg([['system','System'],['light','Light'],['dark','Dark']],pref('mode')||'system',v=>{pref('mode',v);theme()}),h('div',{style:'height:8px'}),seg([['logo','Logo blue'],['cream','Cream'],['sage','Sage']],pref('pal')||'logo',v=>{pref('pal',v);theme()}),
-h('div',{class:'sw',style:'margin-top:10px'},h('span',{class:'note'},'Accent color'),ac,h('button',{class:'btn',onclick:()=>{pref('accent',null);theme();settings()}},'Reset')),
-h('h4',{},'Library'),h('p',{class:'note'},'Default view'),seg([['grid','Grid'],['list','List']],pref('view')||'grid',v=>{pref('view',v);S.view=v;renderList()}),
-h('p',{class:'note'},'Default sorting'),seg([['new','Newest'],['old','Oldest'],['az','A–Z'],['upd','Updated'],['used','Most copied']],pref('sort')||'new',v=>{pref('sort',v);S.sort=v;refresh()}),
+h('h4',{},'Appearance'),seg([['system','System'],['light','Light'],['dark','Dark']],pref('mode')||'system',v=>{pref('mode',v);theme()}),
 h('h4',{},'Data and backup'),h('div',{class:'row',style:'justify-content:flex-start;margin:0'},h('button',{class:'btn pri',onclick:()=>{try{const a=h('a',{href:URL.createObjectURL(new Blob([json()],{type:'application/json'})),download:'clipnest-backup-'+new Date().toISOString().slice(0,10)+'.json'});document.body.append(a);a.click();a.remove();toast('Export started. If no file appears, use Copy JSON.')}catch{toast('Download failed. Use Copy JSON instead.',1)}}},'Export library'),h('button',{class:'btn',onclick:async()=>toast(await clip(json())?'Backup JSON copied!':'Could not copy to clipboard.',0)},'Copy JSON')),
 h('p',{class:'note'},'Import a backup'),fi,h('div',{style:'height:6px'}),pj,h('div',{class:'row'},h('button',{class:'btn',onclick:()=>pj.value.trim()?imp(pj.value):toast('Paste backup JSON first.',1)},'Preview import')),st,
 h('p',{class:'note'},'Snippets live only in this browser. Clearing site data, private browsing, or switching device or browser can erase them. Export a backup regularly — browser storage is not a backup.'),

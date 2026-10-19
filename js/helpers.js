@@ -5,7 +5,7 @@ const show=(nodes,onx,cls)=>{dlg.onx=onx||null;dlg.className=cls||'';dlg.replace
 const hide=()=>{dlg.onx=null;dlg.close();dlg.replaceChildren()};
 const ask=(msg,ok,no='Cancel',danger)=>new Promise(r=>{const d=v=>{dlg2.close();r(v)};dlg2.oncancel=e=>{e.preventDefault();d(null)};dlg2.replaceChildren(h('p',{class:'msg'},msg),h('div',{class:'row'},h('button',{class:'btn',onclick:()=>d(false)},no),h('button',{class:'btn pri'+(danger?' dng':''),onclick:()=>d(true)},ok)));dlg2.showModal()});
 const fd=t=>new Date(t).toLocaleDateString(undefined,{month:'short',day:'numeric',year:new Date(t).getFullYear()===new Date().getFullYear()?undefined:'numeric'});
-function theme(){const m=pref('mode')||'system',r=document.documentElement;r.dataset.theme=m==='dark'||(m==='system'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light';r.dataset.pal=pref('pal')||'logo';const a=pref('accent');if(a){const n=parseInt(a.slice(1),16),l=(.299*(n>>16)+.587*(n>>8&255)+.114*(n&255))/255;r.style.setProperty('--ac',a);r.style.setProperty('--on',l>.6?'#1b1917':'#fff')}else{r.style.removeProperty('--ac');r.style.removeProperty('--on')}}
+function theme(){const m=pref('mode')||'system',r=document.documentElement;r.dataset.theme=m==='dark'||(m==='system'&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light';r.dataset.pal='logo';r.style.removeProperty('--ac');r.style.removeProperty('--on');pref('pal',null);pref('accent',null)}
 async function clip(t){try{await navigator.clipboard.writeText(t);return true}catch{}try{const a=h('textarea',{style:'position:fixed;opacity:0'});a.value=t;document.body.append(a);a.select();const r=document.execCommand('copy');a.remove();return r}catch{return false}}
 async function copy(s){if(await clip(s.content)){s.copies=(s.copies||0)+1;await save(s);toast('Copied!');renderList()}else{const a=h('textarea',{rows:8,readonly:true,'aria-label':'Snippet content'});a.value=s.content;show([h('h3',{},'Copy manually'),h('p',{class:'msg'},"The browser blocked clipboard access, so nothing was copied. Select the text below and copy it yourself."),a,h('div',{class:'row'},h('button',{class:'btn pri',onclick:hide},'Done'))]);a.focus();a.select()}}
 const upd=(s,c)=>save({...s,...c,updated:Date.now()});
@@ -19,7 +19,7 @@ const setF=a=>pref('folders',JSON.stringify(dd(a)));
 const folders=()=>dd([...getF(),...D.filter(s=>s.category).map(s=>s.category)]).sort((a,b)=>a.localeCompare(b,undefined,{sensitivity:'base'}));
 function menu(s){const m=T[s.type],b=(t,f,c)=>h('button',{class:'btn mi '+(c||''),onclick:async()=>{hide();await f()}},t);
 const meta=[m.l,'Saved '+fd(s.created),s.copies?`Copied ${s.copies}×`:null,s.category?'Folder: '+s.category:null].filter(Boolean).join(' · ');
-show([h('h3',{},s.title),h('p',{class:'note'},meta),s.desc?h('p',{class:'note'},s.desc):null,s.tags.length?h('p',{class:'note'},s.tags.map(t=>'#'+t).join(' ')):null,
+show([h('h3',{},s.title),h('p',{class:'note'},meta),s.desc?h('p',{class:'note'},s.desc):null,
 h('pre',{class:'pre'},s.content.length>600?s.content.slice(0,600)+'…':s.content),
 h('div',{class:'mg'},b('Copy',()=>copy(s)),b('Edit',()=>form(s)),b('Duplicate',()=>form({...s,id:null,title:s.title+' (copy)'},{dup:1})),b(s.fav?'Unfavorite':'Favorite',()=>tog(s,'fav')),b(s.pin?'Unpin':'Pin',()=>tog(s,'pin')),b('Move to Trash',()=>trash(s),'dng')),
 h('div',{class:'row'},h('button',{class:'btn',onclick:hide},'Close'))])}

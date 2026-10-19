@@ -1,4 +1,4 @@
-# ClipNest v1.0.9
+# ClipNest v1.0.10
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -28,10 +28,10 @@ Change the version in one place: `VER` in `js/config.js`.
 ## Usage
 - **Search icon** (top right on phones) opens the search field. Your search stays active when the field is closed; a dot on the icon shows it.
 - **Paste** (floating button) reads your clipboard only when tapped and saves it at once as paste-1, paste-2, ...; if the clipboard is blocked you get a paste box instead. **+** (above Paste) adds a snippet by hand.
-- Search covers title, content, description and tags. Use the menu for type, favorites, pinned and folders, the tag dropdown for tags, and the sort icon to sort.
+- Search covers title, content and description. Use the menu for type, favorites, pinned and folders, and the sort icon to sort.
 - Tap the copy icon to copy exact content. "Copied!" appears only on success; otherwise you get a select-and-copy fallback.
 - Delete moves items to Trash, found in Settings > Data and backup (restore, delete forever, empty Trash — both ask for confirmation).
-- Settings: theme (System/Light/Dark), palette, accent colour, default view/sort, category rename, backup.
+- Settings: theme (System/Light/Dark), backup.
 
 ## Storage limitations
 Data lives in this browser's IndexedDB. It can be lost if site data is cleared, in private browsing, or when you change browser/device. **Export a backup regularly** (Settings > Data and backup). Imports are validated and previewed before anything changes; duplicates can be skipped or kept.
@@ -40,6 +40,11 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.10 - Tags and Settings options (batch 2 of the cleanup)
+- Removed all tag features: the form field, search by tag, the tag dropdown and tags on details. Snippets saved earlier keep any stored tags in their data, but the app ignores them; new snippets and imports don't use tags.
+- Settings no longer has Default view or Default sorting. The grid/list and sort icons on the home screen stay, and the app remembers your last choice automatically.
+- Appearance is now just System, Light and Dark. Palettes and the custom accent colour were removed (the logo blue is always used; old palette/accent choices are cleared).
+
 ### 1.0.9 - Home screen (batch 1 of the cleanup)
 - The header is now just the menu button (left) and the search icon (right): no logo, name or tagline. The logo and name remain at the top of the menu.
 - On phones the menu slides in from the left. On wide screens it is still the permanent left sidebar, and the search field sits at the top of the page.
@@ -91,11 +96,6 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-### Batch 2 - Tags and Settings options
-- Remove all tag features (form, cards, details, search, tag dropdown, backups). Tags already stored in saved snippets are ignored.
-- Remove Default view and Default sorting from Settings (the home icons stay; the last choice is remembered automatically).
-- Appearance keeps only System, Light and Dark; palettes and accent colour are removed.
-
 ### Batch 3 - Settings layout, About and labels
 - Settings sections: Appearance, Data (Export and Import only, plus a short storage-loss warning) and a styled About card (large logo, name, version, tagline, one-line description, "On this device / No account" badges).
 - Remove unnecessary labels and notes.
