@@ -1,4 +1,4 @@
-# ClipNest v1.0.0
+# ClipNest v1.0.1
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -25,6 +25,7 @@ A local-first snippet manager. Vanilla HTML/CSS/JS, no build step, no backend, n
 Change the version in one place: `VER` in `js/config.js`.
 
 ## Usage
+- **Search icon** (top right on phones) opens the search field. Your search stays active when the field is closed; a dot on the icon shows it.
 - **Paste** reads your clipboard only when tapped; if blocked, paste into the box shown. **+** adds a snippet manually.
 - Search covers title, content, description and tags. Filter by type, favorites, pinned, category, tag; sort via the dropdown.
 - Tap the copy icon to copy exact content. "Copied!" appears only on success; otherwise you get a select-and-copy fallback.
@@ -36,3 +37,23 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 
 ## Known limitations
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
+
+## Changelog
+### 1.0.1 - Mobile batch 1
+- Header is fixed at the top and more compact; the whole phone layout is slightly smaller and less cramped.
+- Search is now an icon beside Settings that opens the search field under the header (always visible on desktop).
+- Filter chips (All, URL, Code, ...) are one horizontally scrollable row on phones.
+
+### 1.0.0
+- First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
+
+## Planned changes (not built yet)
+### Batch 2 - Library bar and floating Paste
+- Quick Paste becomes a floating button in the lower right (with bottom padding so it never covers cards).
+- Grid/list becomes one icon button that shows and toggles the current view.
+- Remove the "+" beside the grid; add a "Write manually" option inside the Paste dialog.
+- Sort dropdown becomes an icon beside grid/list, opening a small sheet of sort options.
+
+### Batch 3 - Settings
+- Trash moves into Settings (under Data and backup) as a row with the item count.
+- Settings becomes a full-screen phone panel: sticky title and Done button, larger touch targets, no sideways overflow.

@@ -58,3 +58,26 @@ dialog textarea{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px
 #toast.bad{background:var(--bad);color:#fff}
 .sw{display:flex;align-items:center;gap:10px;flex-wrap:wrap}input[type=color]{width:48px;height:44px;border:1px solid var(--bd);border-radius:12px;background:none;padding:2px}
 .ln{display:flex;gap:6px;margin:6px 0}.ln input{flex:1}
+
+/* v1.0.1 - mobile batch 1 */
+#sr{display:none;padding:0 0 6px}#sr.open{display:flex}
+#sBtn{position:relative;color:var(--tx)}#sBtn.act::after{content:"";position:absolute;top:8px;right:8px;width:9px;height:9px;border-radius:50%;background:var(--ac);border:2px solid var(--bg)}
+@media(min-width:620px){#sr{display:flex;padding:0 0 12px}#sBtn{display:none}}
+@media(max-width:619px){
+:root{padding-top:0}
+#hd{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--bd);padding:calc(env(safe-area-inset-top,0px) + 6px) 12px 6px}
+#app{padding:calc(var(--hd-h,60px) + 10px) 12px 40px}
+header{gap:10px;margin:0}
+.logo{width:36px;height:36px;border-radius:11px}.logo svg{width:20px;height:20px}
+h1{font-size:20px}.ttl p{font-size:12px;margin:0}
+.ib.lg{width:40px;height:40px}
+#q{padding:10px 14px;font-size:16px}
+#top{border-radius:20px;padding:10px 12px}.qp{margin-top:0}.qp h2{font-size:16px}.qp p{font-size:13px}
+.dark{padding:11px 18px;font-size:16px}
+.lh{margin:14px 0 6px}.lh h2{font-size:19px}
+#chips{flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:0 -12px;padding:2px 12px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#chips::-webkit-scrollbar{display:none}
+.chip{flex:none;white-space:nowrap;font-size:14px;padding:6px 14px;min-height:36px}
+#ctl{margin:10px 0}
+#list{gap:10px}.cd{padding:12px;border-radius:20px}.cd h3{font-size:16px}.pv{font-size:14px}
+}
