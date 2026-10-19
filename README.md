@@ -1,4 +1,4 @@
-# ClipNest v1.0.4
+# ClipNest v1.0.5
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -12,6 +12,7 @@ A local-first snippet manager. Vanilla HTML/CSS/JS, no build step, no backend, n
 ## Files
 - `index.html` – page shell
 - `styles.css` – all styling and themes
+- `logo.svg` – app logo and favicon
 - `js/config.js` – version constant (`VER`), icons, helpers, state
 - `js/db.js` – IndexedDB data layer
 - `js/detect.js` – rule-based type and title detection
@@ -39,6 +40,9 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.5
+- New logo (`logo.svg`) used in the header and as the browser tab icon.
+
 ### 1.0.4 - Folder layout
 - New top row: a filter button (opens the type list: All, URL, Code, Command, Prompt, Email, Text, Favorites, Pinned, with counts), folder chips with name and count, and a "More" button for managing folders.
 - Folders are the old "categories": pick one in the snippet form (now labelled Folder). More lets you create, open, rename and delete folders. Deleting a folder keeps its snippets (they just have no folder). Empty folders and folder names are included in JSON backups.
