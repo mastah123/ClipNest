@@ -1,4 +1,4 @@
-# ClipNest v1.0.7
+# ClipNest v1.0.8
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -27,7 +27,7 @@ Change the version in one place: `VER` in `js/config.js`.
 
 ## Usage
 - **Search icon** (top right on phones) opens the search field. Your search stays active when the field is closed; a dot on the icon shows it.
-- **Paste** (floating button) reads your clipboard only when tapped; if blocked, paste into the box shown. Use **Write manually** in that dialog to type a snippet from scratch.
+- **Paste** (floating button) reads your clipboard only when tapped and saves it at once as paste-1, paste-2, ...; if the clipboard is blocked you get a paste box instead. **+** (above Paste) adds a snippet by hand.
 - Search covers title, content, description and tags. Use the menu for type, favorites, pinned and folders, the tag dropdown for tags, and the sort icon to sort.
 - Tap the copy icon to copy exact content. "Copied!" appears only on success; otherwise you get a select-and-copy fallback.
 - Delete moves items to Trash, found in Settings > Data and backup (restore, delete forever, empty Trash — both ask for confirmation).
@@ -40,6 +40,12 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.8 - Paste and "+" (batch 3 of the menu redesign)
+- **Paste** (floating, lower right) now saves immediately: it reads the clipboard once, detects the type, and saves the snippet as `paste-1`, `paste-2`, ... using the lowest unused number (Trash is counted, so a restored item never clashes). The content is stored exactly as copied. Rename or retype it later from the card's › menu > Edit.
+- If the clipboard can't be read or is empty, nothing is saved: a paste form opens (pre-titled with the next paste-N) and says so. If identical content already exists you are offered "Open existing" or "Save anyway".
+- New floating **+** above Paste opens the manual entry form.
+- The old Quick Paste card (desktop) was removed; both buttons float on every screen size.
+
 ### 1.0.7 - Menu (batch 2 of the menu redesign)
 - New menu button at the top right (replaces the Settings button). On phones it slides in from the right; on screens 900px and wider it is a permanent sidebar on the left and the header is hidden.
 - Menu layout: fixed logo + "ClipNest" header; scrollable type list (All, Pinned, Favorites, URL, Code, Command, Prompt, Email, Text, with counts); a fixed-height Folders section with a "Show all" link that opens a full-screen folders page (create, open, rename, delete); Trash and Settings fixed at the bottom.
@@ -80,6 +86,4 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-### Batch 3 - Paste and "+"
-- The floating Paste button saves clipboard text immediately as "paste-1", "paste-2", ... (next unused number) with the type auto-detected. If the clipboard can't be read it falls back to the paste field and never claims a save that didn't happen; identical existing content still offers "open existing".
-- A floating "+" above Paste opens the manual entry form.
+None queued. Add new requests here as they come in.

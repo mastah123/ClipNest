@@ -1,4 +1,9 @@
-async function qp(){let t='',n='';try{t=await navigator.clipboard.readText();if(!t.trim())n='The clipboard has no text. Paste or type below.'}catch{n="Couldn't read the clipboard (permission denied or not supported here), so nothing was captured. Paste your text below."}form({content:t},{note:n,qp:1})}
+const pasteName=()=>{const u=new Set(D.map(s=>s.title.trim().toLowerCase()));let i=1;while(u.has('paste-'+i))i++;return 'paste-'+i};
+async function qp(){let t;try{t=await navigator.clipboard.readText()}catch{return form({title:pasteName()},{note:"Couldn't read the clipboard (permission denied or not supported here), so nothing was saved. Paste your text below.",qp:1})}
+if(!t||!t.trim())return form({title:pasteName()},{note:'The clipboard has no text, so nothing was saved. Paste or type below.',qp:1});
+const d=D.find(x=>!x.trashed&&x.content===t);if(d){const r=await ask(`This exact content is already saved as “${d.title}”. Open the existing snippet instead?`,'Open existing','Save anyway');if(r===null)return;if(r)return form(d)}
+const type=detect(t),n=Date.now(),o={id:uid(),title:pasteName(),content:t,type,desc:'',category:'',tags:[],created:n,updated:n,fav:false,pin:false,copies:0,trashed:null};
+if(await save(o)){toast(`Saved as ${o.title} (${T[type].l})`);refresh()}}
 function form(init={},o={}){
 const s={type:'text',title:'',content:'',desc:'',category:'',tags:[],...init},edit=!!s.id;let tt=edit||!!init.title,yt=edit||!!init.type,tags=[...s.tags],dirty=false;
 const err=h('p',{class:'err',role:'alert'}),hint=h('p',{class:'hint'});

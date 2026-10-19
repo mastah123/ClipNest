@@ -1,7 +1,7 @@
 $('#sIc').append(I('search'));$('#qc').append(I('x'));$('#sBtn').append(I('search',22));$('#pIc').append(I('paste'));$('#bSort').append(I('sort',24));
 $('#q').oninput=e=>{S.q=e.target.value;renderList()};
 $('#qc').onclick=()=>{S.q='';$('#q').value='';renderList();$('#q').focus()};
-$('#bQP').onclick=qp;$('#bSort').onclick=sortSheet;$('#vT').onclick=()=>{S.view=S.view==='grid'?'list':'grid';pref('view',S.view);renderList()};
+$('#bQP').onclick=qp;$('#bAdd').onclick=()=>form();$('#bAdd').append(I('plus',26));$('#bSort').onclick=sortSheet;$('#vT').onclick=()=>{S.view=S.view==='grid'?'list':'grid';pref('view',S.view);renderList()};
 
 matchMedia('(prefers-color-scheme:dark)').addEventListener('change',theme);
 (async()=>{theme();try{db=await openDB();D=await tx('readonly',o=>o.getAll())}catch{mem=true;$('#warn').hidden=false}refresh()})();
