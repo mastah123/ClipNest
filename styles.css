@@ -134,3 +134,16 @@ dialog.full[open]{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;ma
 
 /* v1.0.5 - image logo */
 img.logo{display:block;background:none;border-radius:0;object-fit:contain;flex:none}
+
+/* v1.0.6 - logo-matched theme, icons and type */
+:root{--bg:#eef3fa;--cd:#fafcff;--tx:#1f3350;--mu:#5b6f8c;--bd:#d2deee;--in:#e2eaf5;--ac:#3F5D83;--on:#fff;--dk:#2b4263;--dkt:#fff;--bad:#b3261e;
+--ff:ui-rounded,"SF Pro Rounded","Hiragino Maru Gothic ProN",Quicksand,Nunito,"Varela Round","Google Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root[data-pal=cream]:not([data-theme=dark]){--bg:#f8f6f0;--cd:#fff;--tx:#2a2622;--mu:#6f695d;--bd:#e7e2d6;--in:#ebe9e4;--ac:#a8683f;--dk:#1c1a18}
+:root[data-theme=dark]{--bg:#111822;--cd:#1a2432;--tx:#e8eef7;--mu:#9db0c9;--bd:#2b3a4f;--in:#233147;--ac:#8fb0dc;--on:#0f1722;--dk:#e8eef7;--dkt:#0f1722;--bad:#ff8a80}
+body{font-family:var(--ff)}
+h1{color:var(--ac);font-weight:700;letter-spacing:-.01em}
+.lh h2,.qp h2,dialog h3{font-weight:650}
+.tt,.fc,.btn.pri{font-weight:600}
+.tile,.fi{border:1.5px solid color-mix(in srgb,var(--tc) 30%,transparent)}
+.tile{background:color-mix(in srgb,var(--tc) 14%,var(--cd))}
+.cd,#bFilt,#bMore,.fc{box-shadow:0 1px 0 color-mix(in srgb,var(--ac) 8%,transparent)}

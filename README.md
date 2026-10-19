@@ -1,4 +1,4 @@
-# ClipNest v1.0.5
+# ClipNest v1.0.6
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -40,6 +40,12 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.6 - Logo-matched look (batch 1 of the menu redesign)
+- New default palette "Logo blue" taken from the logo (navy `#3F5D83`, light blues, near-white surfaces). Cream and Sage remain as options; Dark mode is now blue-toned. The old Blue palette was replaced by Logo blue.
+- Type colours (URL, Code, Command, Prompt, Email, Text) and folder chip colours are now a cool blue/teal/indigo family so they sit with the logo; icons rely on shape and the text label, not colour alone.
+- Icons use a slightly heavier stroke with rounded caps and joins, and icon tiles get a soft outline, echoing the logo.
+- Typography uses a rounded system font stack (SF Pro Rounded / ui-rounded where the device has it, otherwise the normal system font) and the ClipNest title takes the brand navy. No web fonts are loaded.
+
 ### 1.0.5
 - New logo (`logo.svg`) used in the header and as the browser tab icon.
 
@@ -68,4 +74,11 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-None queued. Add new requests here as they come in.
+### Batch 2 - Right-side menu
+- Menu button at the top right opens a right-hand panel on phones; on desktop the same panel is a permanent sidebar.
+- Fixed header with the logo and "ClipNest"; below it the type list (All, Pinned, Favorites, URL, Code, Command, Prompt, Email, Text) in a scrollable area; then a fixed-height Folders section with a "Show all" link (full folders page); Trash and Settings fixed at the bottom.
+- Filter button and folder chips leave the main screen; the active filter shows as a small label. Search stays in the header.
+
+### Batch 3 - Paste and "+"
+- The floating Paste button saves clipboard text immediately as "paste-1", "paste-2", ... (next unused number) with the type auto-detected. If the clipboard can't be read it falls back to the paste field and never claims a save that didn't happen; identical existing content still offers "open existing".
+- A floating "+" above Paste opens the manual entry form.

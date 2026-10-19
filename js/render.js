@@ -14,7 +14,7 @@ const pins=(!S.trash&&S.f!=='pin')?a.filter(s=>s.pin):[],rest=pins.length?a.filt
 if(pins.length){L.append(h('h3',{class:'gh'},'Pinned'),...pins.map(card));if(rest.length)L.append(h('h3',{class:'gh'},'Everything else'))}L.append(...rest.map(card))}
 function renderChips(){const fr=$('#fr');fr.hidden=S.trash;const c=$('#fchips'),x=c.scrollLeft,live=D.filter(s=>!s.trashed),b=$('#bFilt'),on=S.f!=='all';
 b.replaceChildren(I('filter',22),...(on?[h('span',{},FL[S.f])]:[]));b.className=on?'act':'';b.setAttribute('aria-label','Filter by type, currently '+FL[S.f]);
-const fs=folders(),PAL=['#3b6fd6','#e08a1e','#3f8a5a','#c2475f','#7a52c7','#2a9d9d'];
+const fs=folders(),PAL=['#3F5D83','#3d7f8f','#5a6fa8','#7b66a8','#4a86b8','#6b7f99'];
 c.replaceChildren(...(fs.length?fs.map(f=>{const sel=S.cat===f,n=live.filter(s=>s.category===f).length,k=[...f].reduce((a,ch)=>a+ch.charCodeAt(0),0)%PAL.length;
 return h('button',{class:'fc'+(sel?' on':''),style:'--tc:'+PAL[k],'aria-pressed':String(sel),onclick:()=>{S.cat=sel?'':f;refresh()}},h('span',{class:'fi'},I('folder',18)),h('span',{},f),h('span',{class:'n'},String(n)))}):[h('span',{class:'note'},'No folders yet')]));c.scrollLeft=x}
 function renderCtl(){const c=$('#ctl'),live=D.filter(x=>!x.trashed),nt=D.length-live.length;
