@@ -1,4 +1,4 @@
-# ClipNest v1.0.10
+# ClipNest v1.0.11
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -40,6 +40,12 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.11 - Settings, About and labels (batch 3 of the cleanup)
+- Settings has three clean sections: Appearance (System / Light / Dark), Data (Export and Import buttons plus one line warning that browser data can be erased) and About.
+- Removed Copy JSON, the paste-JSON box and the storage estimate. Import now picks a backup file only (still validated and previewed before anything changes).
+- About is a styled card: logo, name, version, tagline, one-line description and "On this device / No account" badges.
+- Removed unnecessary labels: the "Detected: ..." hint and "(optional)" suffixes in the form, the Trash note, and the longer empty-state and folder messages.
+
 ### 1.0.10 - Tags and Settings options (batch 2 of the cleanup)
 - Removed all tag features: the form field, search by tag, the tag dropdown and tags on details. Snippets saved earlier keep any stored tags in their data, but the app ignores them; new snippets and imports don't use tags.
 - Settings no longer has Default view or Default sorting. The grid/list and sort icons on the home screen stay, and the app remembers your last choice automatically.
@@ -96,9 +102,5 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-### Batch 3 - Settings layout, About and labels
-- Settings sections: Appearance, Data (Export and Import only, plus a short storage-loss warning) and a styled About card (large logo, name, version, tagline, one-line description, "On this device / No account" badges).
-- Remove unnecessary labels and notes.
-
 ### Batch 4 - Add/Edit form
 - Full-screen on phones with the title fixed at the top, Cancel and Save fixed at the bottom, and only the fields scrolling. Content wraps instead of scrolling sideways (display only; saved text is unchanged). Centred dialog on desktop.
