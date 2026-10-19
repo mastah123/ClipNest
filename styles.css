@@ -198,3 +198,9 @@ header{justify-content:space-between}
 .ab .at{margin:6px 0 0;font-style:italic;color:var(--tx)}.ab .ad{margin:0;font-size:14px;color:var(--mu)}
 .bxs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:8px}
 .bx{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--bd);border-radius:999px;padding:5px 12px;font-size:13px;color:var(--ac);background:var(--cd)}
+
+/* v1.0.12 - add/edit form: fixed title and actions, wrapped content */
+dialog textarea.ct{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;overflow-x:hidden;overflow-y:auto;min-height:200px;max-width:100%}
+.sf{flex:none;border-top:1px solid var(--bd);background:var(--cd);padding:10px 20px 12px}
+.sf .err{margin:0 0 8px}.sf .row{margin:0;flex-wrap:nowrap}.sf .row .btn{flex:1 1 0}
+@media(max-width:619px){.sf{padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px))}}

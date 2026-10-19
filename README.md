@@ -1,4 +1,4 @@
-# ClipNest v1.0.11
+# ClipNest v1.0.12
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -40,6 +40,11 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.12 - Add/Edit form (batch 4 of the cleanup)
+- The New/Edit snippet form is a full-screen panel on phones and a centred dialog on desktop. The title stays at the top, Cancel and Save stay fixed at the bottom (validation messages show there too), and only the fields in between scroll.
+- The content box wraps long lines instead of scrolling sideways. This is display only: no line breaks are added, so saved and copied text is exactly what you typed.
+- "Write manually" (after a Paste fallback) moved to the top of the fields.
+
 ### 1.0.11 - Settings, About and labels (batch 3 of the cleanup)
 - Settings has three clean sections: Appearance (System / Light / Dark), Data (Export and Import buttons plus one line warning that browser data can be erased) and About.
 - Removed Copy JSON, the paste-JSON box and the storage estimate. Import now picks a backup file only (still validated and previewed before anything changes).
@@ -102,5 +107,4 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-### Batch 4 - Add/Edit form
-- Full-screen on phones with the title fixed at the top, Cancel and Save fixed at the bottom, and only the fields scrolling. Content wraps instead of scrolling sideways (display only; saved text is unchanged). Centred dialog on desktop.
+None queued. Add new requests here as they come in.
