@@ -1,4 +1,4 @@
-# ClipNest v1.0.6
+# ClipNest v1.0.7
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -28,7 +28,7 @@ Change the version in one place: `VER` in `js/config.js`.
 ## Usage
 - **Search icon** (top right on phones) opens the search field. Your search stays active when the field is closed; a dot on the icon shows it.
 - **Paste** (floating button) reads your clipboard only when tapped; if blocked, paste into the box shown. Use **Write manually** in that dialog to type a snippet from scratch.
-- Search covers title, content, description and tags. Use the filter button for type/favorites/pinned, folder chips for folders, the tag dropdown for tags, and the sort icon to sort.
+- Search covers title, content, description and tags. Use the menu for type, favorites, pinned and folders, the tag dropdown for tags, and the sort icon to sort.
 - Tap the copy icon to copy exact content. "Copied!" appears only on success; otherwise you get a select-and-copy fallback.
 - Delete moves items to Trash, found in Settings > Data and backup (restore, delete forever, empty Trash — both ask for confirmation).
 - Settings: theme (System/Light/Dark), palette, accent colour, default view/sort, category rename, backup.
@@ -40,6 +40,12 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.7 - Menu (batch 2 of the menu redesign)
+- New menu button at the top right (replaces the Settings button). On phones it slides in from the right; on screens 900px and wider it is a permanent sidebar on the left and the header is hidden.
+- Menu layout: fixed logo + "ClipNest" header; scrollable type list (All, Pinned, Favorites, URL, Code, Command, Prompt, Email, Text, with counts); a fixed-height Folders section with a "Show all" link that opens a full-screen folders page (create, open, rename, delete); Trash and Settings fixed at the bottom.
+- The filter button and folder chips were removed from the main screen. Active type/folder filters show as small removable pills under the library heading. Search is unchanged (icon in the header on phones).
+- Trash moved from Settings into the menu.
+
 ### 1.0.6 - Logo-matched look (batch 1 of the menu redesign)
 - New default palette "Logo blue" taken from the logo (navy `#3F5D83`, light blues, near-white surfaces). Cream and Sage remain as options; Dark mode is now blue-toned. The old Blue palette was replaced by Logo blue.
 - Type colours (URL, Code, Command, Prompt, Email, Text) and folder chip colours are now a cool blue/teal/indigo family so they sit with the logo; icons rely on shape and the text label, not colour alone.
@@ -74,11 +80,6 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-### Batch 2 - Right-side menu
-- Menu button at the top right opens a right-hand panel on phones; on desktop the same panel is a permanent sidebar.
-- Fixed header with the logo and "ClipNest"; below it the type list (All, Pinned, Favorites, URL, Code, Command, Prompt, Email, Text) in a scrollable area; then a fixed-height Folders section with a "Show all" link (full folders page); Trash and Settings fixed at the bottom.
-- Filter button and folder chips leave the main screen; the active filter shows as a small label. Search stays in the header.
-
 ### Batch 3 - Paste and "+"
 - The floating Paste button saves clipboard text immediately as "paste-1", "paste-2", ... (next unused number) with the type auto-detected. If the clipboard can't be read it falls back to the paste field and never claims a save that didn't happen; identical existing content still offers "open existing".
 - A floating "+" above Paste opens the manual entry form.

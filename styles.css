@@ -147,3 +147,29 @@ h1{color:var(--ac);font-weight:700;letter-spacing:-.01em}
 .tile,.fi{border:1.5px solid color-mix(in srgb,var(--tc) 30%,transparent)}
 .tile{background:color-mix(in srgb,var(--tc) 14%,var(--cd))}
 .cd,#bFilt,#bMore,.fc{box-shadow:0 1px 0 color-mix(in srgb,var(--ac) 8%,transparent)}
+
+/* v1.0.7 - right-side menu */
+#nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);background:var(--cd);border-left:1px solid var(--bd);z-index:40;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .18s ease;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+#nav.open{transform:none}
+@media(prefers-reduced-motion:reduce){#nav{transition:none}}
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:30;display:none}#scrim.open{display:block}
+.nh{display:flex;align-items:center;gap:10px;padding:12px 10px 10px 14px;border-bottom:1px solid var(--bd);flex:none}
+.nh .nm{font-size:21px;font-weight:700;color:var(--ac);letter-spacing:-.01em;flex:1}
+.nt{flex:1;min-height:0;overflow-y:auto;padding:8px 6px;overscroll-behavior:contain}
+.nf{flex:none;height:200px;display:flex;flex-direction:column;border-top:1px solid var(--bd)}
+.nfh{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 0;flex:none}
+.nfh h2{margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--mu)}
+.lnk{background:none;border:0;color:var(--ac);font-weight:600;font-size:14px;padding:8px 6px;min-height:40px}
+.nfl{flex:1;min-height:0;overflow-y:auto;padding:0 6px 6px;overscroll-behavior:contain}
+.nb{flex:none;border-top:1px solid var(--bd);padding:6px}
+.ni{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:8px 12px;border:0;background:none;border-radius:12px;text-align:left;font-size:15.5px;color:var(--tx)}
+.ni .n{margin-left:auto;color:var(--mu);font-size:13px}
+.ni.on{background:color-mix(in srgb,var(--ac) 14%,var(--cd));color:var(--ac);font-weight:600;box-shadow:inset 3px 0 0 var(--ac)}
+.fi.sm{width:26px;height:26px}
+#af{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.afc{display:inline-flex;align-items:center;gap:6px;background:var(--in);border:1px solid var(--bd);border-radius:999px;padding:5px 10px;font-size:13px;min-height:32px}
+@media(min-width:900px){
+#nav{transform:none;left:0;right:auto;width:260px;border-left:0;border-right:1px solid var(--bd);z-index:10;transition:none}
+#scrim{display:none!important}#bMenu,#nClose{display:none}
+body{padding-left:260px}#hd header{display:none}
+}

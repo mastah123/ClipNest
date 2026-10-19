@@ -7,7 +7,7 @@
 </head><body>
 <div id="app">
 <div class="warn" id="warn" hidden role="alert">Browser storage is unavailable (private mode?). Changes will not be saved — export a backup before leaving.</div>
-<div id="hd"><header><img class="logo" id="logo" src="logo.svg" alt="ClipNest logo" width="56" height="56"><div class="ttl"><h1>ClipNest</h1><p>Your snippets, one tap away.</p></div><button class="ib lg" id="sBtn" aria-label="Search" aria-expanded="false"></button><button class="ib lg" id="bSet" aria-label="Settings"></button></header>
+<div id="hd"><header><img class="logo" id="logo" src="logo.svg" alt="ClipNest logo" width="56" height="56"><div class="ttl"><h1>ClipNest</h1><p>Your snippets, one tap away.</p></div><button class="ib lg" id="sBtn" aria-label="Search" aria-expanded="false"></button><button class="ib lg" id="bMenu" aria-label="Open menu" aria-expanded="false" aria-controls="nav"></button></header>
 <div class="sr" id="sr"><span id="sIc"></span><input id="q" type="search" placeholder="Search snippets…" aria-label="Search snippets" autocomplete="off"><button class="ib lg" id="qc" aria-label="Clear search" hidden></button></div>
 </div>
 <section id="top">
@@ -15,10 +15,17 @@
 </section>
 <div class="lh"><h2 id="lt">Your library</h2><div><button class="ib lg" id="bSort" aria-label="Sort"></button><button class="ib lg" id="vT"></button></div></div>
 <p id="hint">Tap a snippet to copy it. Tap › for details and options.</p>
-<div id="fr"><button id="bFilt" type="button"></button><div id="fchips" role="group" aria-label="Folders"></div><button id="bMore" type="button" aria-label="More folder options">More</button></div>
+<div id="af" hidden></div>
 <div id="ctl"></div>
 <main id="list" class="grid"></main>
 </div>
+<div id="scrim"></div>
+<aside id="nav" aria-label="Main menu">
+<div class="nh"><img src="logo.svg" alt="" width="36" height="36"><span class="nm">ClipNest</span><button class="ib lg" id="nClose" aria-label="Close menu" type="button"></button></div>
+<nav class="nt" id="nTypes" aria-label="Types"></nav>
+<section class="nf" aria-labelledby="nfl"><div class="nfh"><h2 id="nfl">Folders</h2><button class="lnk" id="nAll" type="button">Show all</button></div><div class="nfl" id="nFold"></div></section>
+<div class="nb"><button class="ni" id="nTrash" type="button"></button><button class="ni" id="nSet" type="button"></button></div>
+</aside>
 <datalist id="cats"></datalist>
 <dialog id="dlg"></dialog><dialog id="dlg2"></dialog>
 <div id="toast" role="status" aria-live="polite" hidden></div>
