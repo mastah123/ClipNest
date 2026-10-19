@@ -81,3 +81,12 @@ h1{font-size:20px}.ttl p{font-size:12px;margin:0}
 #ctl{margin:10px 0}
 #list{gap:10px}.cd{padding:12px;border-radius:20px}.cd h3{font-size:16px}.pv{font-size:14px}
 }
+
+/* v1.0.2 - mobile batch 2 */
+.mi.on{background:var(--ac);border-color:var(--ac);color:var(--on)}
+@media(max-width:619px){
+#top{display:contents}.qp{display:contents}.qp>div{display:none}
+#bQP{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;padding:15px 22px;box-shadow:0 4px 14px rgba(0,0,0,.28)}
+#app{padding-bottom:96px}
+#toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
