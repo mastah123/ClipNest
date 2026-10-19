@@ -22,8 +22,7 @@ if(S.trash){c.replaceChildren(h('button',{class:'btn',onclick:()=>{S.trash=false
 const sel=(l,v,opts,f)=>{const e=h('select',{'aria-label':l,onchange:()=>f(e.value)},...opts.map(([k,t])=>h('option',{value:k},t)));e.value=v;return e};
 c.replaceChildren(
 cats.length?sel('Category',S.cat,[['','All categories'],...cats.map(x=>[x,x])],v=>{S.cat=v;renderList()}):null,
-tags.length?sel('Tag',S.tag,[['','All tags'],...tags.map(x=>[x,'#'+x])],v=>{S.tag=v;renderList()}):null,
-h('button',{class:'btn',style:'min-height:40px;padding:6px 14px;font-size:14px',onclick:()=>{S.trash=true;refresh()}},'Trash'+(nt?` (${nt})`:'')))}
+tags.length?sel('Tag',S.tag,[['','All tags'],...tags.map(x=>[x,'#'+x])],v=>{S.tag=v;renderList()}):null)}
 const refresh=()=>{renderChips();renderCtl();renderList()};
 
 function sortSheet(){const o=[['new','Newest'],['old','Oldest'],['az','A–Z'],['upd','Recently updated'],['used','Most copied']];show([h('h3',{},'Sort by'),...o.map(([k,l])=>h('button',{class:'btn mi'+(S.sort===k?' on':''),'aria-pressed':String(S.sort===k),onclick:()=>{S.sort=k;hide();renderList()}},(S.sort===k?'✓ ':'')+l)),h('div',{class:'row'},h('button',{class:'btn',onclick:hide},'Close'))])}

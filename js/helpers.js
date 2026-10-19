@@ -1,7 +1,7 @@
 let tt;function toast(m,bad){const e=$('#toast');e.textContent=m;e.className=bad?'bad':'';e.hidden=false;clearTimeout(tt);tt=setTimeout(()=>e.hidden=true,bad?4000:2000)}
 const dlg=$('#dlg'),dlg2=$('#dlg2');
 dlg.addEventListener('cancel',e=>{if(dlg.onx){e.preventDefault();dlg.onx()}});
-const show=(nodes,onx)=>{dlg.onx=onx||null;dlg.replaceChildren(...nodes);if(!dlg.open)dlg.showModal()};
+const show=(nodes,onx,cls)=>{dlg.onx=onx||null;dlg.className=cls||'';dlg.replaceChildren(...nodes);if(!dlg.open)dlg.showModal()};
 const hide=()=>{dlg.onx=null;dlg.close()};
 const ask=(msg,ok,no='Cancel',danger)=>new Promise(r=>{const d=v=>{dlg2.close();r(v)};dlg2.oncancel=e=>{e.preventDefault();d(null)};dlg2.replaceChildren(h('p',{class:'msg'},msg),h('div',{class:'row'},h('button',{class:'btn',onclick:()=>d(false)},no),h('button',{class:'btn pri'+(danger?' dng':''),onclick:()=>d(true)},ok)));dlg2.showModal()});
 const fd=t=>new Date(t).toLocaleDateString(undefined,{month:'short',day:'numeric',year:new Date(t).getFullYear()===new Date().getFullYear()?undefined:'numeric'});

@@ -1,4 +1,4 @@
-# ClipNest v1.0.2
+# ClipNest v1.0.3
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -29,7 +29,7 @@ Change the version in one place: `VER` in `js/config.js`.
 - **Paste** (floating button) reads your clipboard only when tapped; if blocked, paste into the box shown. Use **Write manually** in that dialog to type a snippet from scratch.
 - Search covers title, content, description and tags. Filter by type, favorites, pinned, category, tag; sort via the sort icon.
 - Tap the copy icon to copy exact content. "Copied!" appears only on success; otherwise you get a select-and-copy fallback.
-- Delete moves items to Trash (restore, delete forever, empty Trash — both ask for confirmation).
+- Delete moves items to Trash, found in Settings > Data and backup (restore, delete forever, empty Trash — both ask for confirmation).
 - Settings: theme (System/Light/Dark), palette, accent colour, default view/sort, category rename, backup.
 
 ## Storage limitations
@@ -39,6 +39,10 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.3 - Mobile batch 3
+- Trash moved into Settings > Data and backup (a row with the item count). Restore, delete forever and Empty Trash work as before; "← Library" returns from the Trash view.
+- Settings is a full-screen panel on phones with a sticky title and Done button, larger touch targets, evenly sized option buttons, no sideways overflow, and it keeps its scroll position when you change an option.
+
 ### 1.0.2 - Mobile batch 2
 - Paste is now a floating button in the lower right on phones (the Quick Paste card remains on desktop).
 - Grid/list is one icon button that shows the current view; tap it to switch.
@@ -53,7 +57,5 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 ### 1.0.0
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
-## Planned changes (not built yet)
-### Batch 3 - Settings
-- Trash moves into Settings (under Data and backup) as a row with the item count.
-- Settings becomes a full-screen phone panel: sticky title and Done button, larger touch targets, no sideways overflow.
+## Planned changes
+None queued. Add new requests here as they come in.
