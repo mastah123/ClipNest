@@ -180,3 +180,12 @@ body{padding-left:260px}#hd header{display:none}
 .fab{width:52px;height:52px;border-radius:50%;border:0;padding:0;background:var(--ac);color:var(--on);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.28)}
 #app{padding-bottom:170px}
 #toast{bottom:calc(150px + env(safe-area-inset-bottom,0px))}
+
+/* v1.0.9 - minimal header, left menu, no library label */
+header{justify-content:space-between}
+.lh{justify-content:flex-end;margin:6px 0 4px}.lh h2{margin-right:auto}
+@media(min-width:620px){#hd{display:flex;align-items:center;gap:8px}#hd header{flex:none}#sr{flex:1;padding:0 0 12px}}
+@media(max-width:899px){
+#nav{left:0;right:auto;border-left:0;border-right:1px solid var(--bd);transform:translateX(-100%)}
+#nav.open{transform:none}
+}

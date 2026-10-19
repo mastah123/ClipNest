@@ -1,4 +1,4 @@
-# ClipNest v1.0.8
+# ClipNest v1.0.9
 
 *Save it once. Find it fast. Copy it anytime.*
 
@@ -40,6 +40,11 @@ Data lives in this browser's IndexedDB. It can be lost if site data is cleared, 
 No sync, background clipboard history, AI, OCR/attachments, or sharing in this version.
 
 ## Changelog
+### 1.0.9 - Home screen (batch 1 of the cleanup)
+- The header is now just the menu button (left) and the search icon (right): no logo, name or tagline. The logo and name remain at the top of the menu.
+- On phones the menu slides in from the left. On wide screens it is still the permanent left sidebar, and the search field sits at the top of the page.
+- Removed the "Your library" heading and the "Tap a snippet..." hint. Tapping a snippet card still copies it. The Trash view keeps its "Trash" title.
+
 ### 1.0.8 - Paste and "+" (batch 3 of the menu redesign)
 - **Paste** (floating, lower right) now saves immediately: it reads the clipboard once, detects the type, and saves the snippet as `paste-1`, `paste-2`, ... using the lowest unused number (Trash is counted, so a restored item never clashes). The content is stored exactly as copied. Rename or retype it later from the card's › menu > Edit.
 - If the clipboard can't be read or is empty, nothing is saved: a paste form opens (pre-titled with the next paste-N) and says so. If identical content already exists you are offered "Open existing" or "Save anyway".
@@ -86,4 +91,14 @@ No sync, background clipboard history, AI, OCR/attachments, or sharing in this v
 - First complete release: capture, detection, search, filters, sorting, categories/tags, Trash, JSON backup, themes.
 
 ## Planned changes
-None queued. Add new requests here as they come in.
+### Batch 2 - Tags and Settings options
+- Remove all tag features (form, cards, details, search, tag dropdown, backups). Tags already stored in saved snippets are ignored.
+- Remove Default view and Default sorting from Settings (the home icons stay; the last choice is remembered automatically).
+- Appearance keeps only System, Light and Dark; palettes and accent colour are removed.
+
+### Batch 3 - Settings layout, About and labels
+- Settings sections: Appearance, Data (Export and Import only, plus a short storage-loss warning) and a styled About card (large logo, name, version, tagline, one-line description, "On this device / No account" badges).
+- Remove unnecessary labels and notes.
+
+### Batch 4 - Add/Edit form
+- Full-screen on phones with the title fixed at the top, Cancel and Save fixed at the bottom, and only the fields scrolling. Content wraps instead of scrolling sideways (display only; saved text is unchanged). Centred dialog on desktop.

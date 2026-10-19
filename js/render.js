@@ -21,9 +21,9 @@ const t=$('#nTrash');t.replaceChildren(I('trash',20),h('span',{},'Trash'),h('spa
 const ch=[];if(!S.trash){if(S.f!=='all')ch.push([FL[S.f],()=>{S.f='all'}]);if(S.cat)ch.push(['Folder: '+S.cat,()=>{S.cat=''}])}
 const af=$('#af');af.hidden=!ch.length;af.replaceChildren(...ch.map(([t,f])=>h('button',{class:'afc','aria-label':'Clear filter '+t,onclick:()=>{f();refresh()}},t,I('x',14))))}
 function renderCtl(){const c=$('#ctl'),live=D.filter(x=>!x.trashed),nt=D.length-live.length;
-$('#lt').textContent=S.trash?'Trash':'Your library';$('#bSort').hidden=S.trash;
+$('#lt').hidden=!S.trash;$('#bSort').hidden=S.trash;
 const cats=[...new Set(live.map(s=>s.category).filter(Boolean))].sort(),tags=dd(live.flatMap(s=>s.tags)).sort();
-$('#cats').replaceChildren(...folders().map(x=>h('option',{value:x})));$('#hint').hidden=S.trash;
+$('#cats').replaceChildren(...folders().map(x=>h('option',{value:x})));
 if(S.trash){c.hidden=false;c.replaceChildren(h('button',{class:'btn',onclick:()=>{S.trash=false;refresh()}},'← Library'),h('button',{class:'btn dng',onclick:emptyTrash},'Empty Trash'),h('p',{class:'note'},'Items stay here until you delete them permanently.'));return}
 const sel=(l,v,opts,f)=>{const e=h('select',{'aria-label':l,onchange:()=>f(e.value)},...opts.map(([k,t])=>h('option',{value:k},t)));e.value=v;return e};
 c.replaceChildren(

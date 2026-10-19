@@ -7,14 +7,11 @@
 </head><body>
 <div id="app">
 <div class="warn" id="warn" hidden role="alert">Browser storage is unavailable (private mode?). Changes will not be saved — export a backup before leaving.</div>
-<div id="hd"><header><img class="logo" id="logo" src="logo.svg" alt="ClipNest logo" width="56" height="56"><div class="ttl"><h1>ClipNest</h1><p>Your snippets, one tap away.</p></div><button class="ib lg" id="sBtn" aria-label="Search" aria-expanded="false"></button><button class="ib lg" id="bMenu" aria-label="Open menu" aria-expanded="false" aria-controls="nav"></button></header>
+<div id="hd"><header><button class="ib lg" id="bMenu" aria-label="Open menu" aria-expanded="false" aria-controls="nav"></button><button class="ib lg" id="sBtn" aria-label="Search" aria-expanded="false"></button></header>
 <div class="sr" id="sr"><span id="sIc"></span><input id="q" type="search" placeholder="Search snippets…" aria-label="Search snippets" autocomplete="off"><button class="ib lg" id="qc" aria-label="Clear search" hidden></button></div>
 </div>
-<section id="top">
-<div class="qp"><div><h2>Quick Paste</h2><p>Capture something from your clipboard</p></div><button class="dark" id="bQP"><span id="pIc"></span>Paste</button></div>
-</section>
-<div class="lh"><h2 id="lt">Your library</h2><div><button class="ib lg" id="bSort" aria-label="Sort"></button><button class="ib lg" id="vT"></button></div></div>
-<p id="hint">Tap a snippet to copy it. Tap › for details and options.</p>
+<div id="fabs"><button class="fab" id="bAdd" type="button" aria-label="Add snippet manually" title="Add manually"></button><button class="dark" id="bQP" type="button"><span id="pIc"></span>Paste</button></div>
+<div class="lh"><h2 id="lt" hidden>Trash</h2><div><button class="ib lg" id="bSort" aria-label="Sort"></button><button class="ib lg" id="vT"></button></div></div>
 <div id="af" hidden></div>
 <div id="ctl"></div>
 <main id="list" class="grid"></main>
