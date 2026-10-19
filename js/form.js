@@ -19,5 +19,5 @@ const n=Date.now(),obj=edit?{...s}:{id:uid(),created:n,fav:false,pin:false,copie
 Object.assign(obj,{title:t,content:c,type:ty.value,desc:de.value.trim(),category:ca.value.trim(),tags,updated:n});
 if(await save(obj)){hide();toast(edit?'Changes saved':'Snippet saved');refresh()}};
 const fl=(l,e)=>h('label',{class:'f'},h('span',{},l),e);
-show([h('h3',{},edit?'Edit snippet':o.dup?'Duplicate snippet':'New snippet'),o.note&&h('p',{class:'note'},o.note),fl('Content',co),hint,fl('Title',ti),fl('Type',ty),fl('Description (optional)',de),fl('Category (optional)',ca),fl('Tags',tg),tl,err,h('div',{class:'row'},o.qp&&s.content?mb:null,h('button',{class:'btn',onclick:cancel},'Cancel'),h('button',{class:'btn pri',onclick:doSave},'Save'))],cancel);
+show([h('h3',{},edit?'Edit snippet':o.dup?'Duplicate snippet':'New snippet'),o.note&&h('p',{class:'note'},o.note),fl('Content',co),hint,fl('Title',ti),fl('Type',ty),fl('Description (optional)',de),fl('Folder (optional)',ca),fl('Tags',tg),tl,err,h('div',{class:'row'},o.qp&&s.content?mb:null,h('button',{class:'btn',onclick:cancel},'Cancel'),h('button',{class:'btn pri',onclick:doSave},'Save'))],cancel);
 (o.note&&!co.value?co:ti).focus()}
